@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "1일차. 마크다운 문법 연습"
 ---
 
