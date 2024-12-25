@@ -19,6 +19,9 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
+  {% for category in page.categories % }
+    <a href="{{ site.url }}/category/{{ category }}.html" >{{ category }}</a>
+  {% endfor %}
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
