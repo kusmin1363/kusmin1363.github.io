@@ -7,6 +7,17 @@
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <script type="text/javascript">
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']], // $...$ 또는 \( ... \)
+          displayMath: [['$$', '$$'], ['\\[', '\\]']] // $$...$$ 또는 \[ ... \]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // 특정 태그는 처리하지 않음
+        }
+      };
+    </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
 
