@@ -380,7 +380,7 @@ show_augmented_images(image_path, None)  # 파이프라인 객체를 직접 전�
 
 
 ### GlassBlur = 이미지의 각 픽셀을 무작위로 이동시킴
-- Sigma, max_delta, iteration, always_apply
+- Sigma, max_delta, iteration
 - Sigma = 흐림의 정도를 제어
 - max_delta = 픽셀을 이동시킬 최대 거리
 - iteration = 반복 적용
@@ -388,7 +388,7 @@ show_augmented_images(image_path, None)  # 파이프라인 객체를 직접 전�
 
 
 ```python
-transform = A.GlassBlur(sigma=0.5, max_delta=2, iterations=2, always_apply=True)
+transform = A.GlassBlur(sigma=0.5, max_delta=2, iterations=2, p = 1)
     
 augmented_image = transform(image=image_np)['image']
     
@@ -403,10 +403,6 @@ show_image(augmented_image, 'Glass Blurred Image')
 plt.show()
 ```
 
-    C:\Users\user\AppData\Local\Temp\ipykernel_17472\1349824843.py:1: UserWarning: Argument(s) 'always_apply' are not valid for transform GlassBlur
-      transform = A.GlassBlur(sigma=0.5, max_delta=2, iterations=2, always_apply=True)
-    
-
 
 ![png](/assets/images/2025-01-22-DL6-DataAugmentation_23_1.png)
     
@@ -419,7 +415,7 @@ plt.show()
 
 
 ```python
-transform = A.CLAHE(clip_limit=2.0, tile_grid_size=(8, 8), always_apply=True)
+transform = A.CLAHE(clip_limit=2.0, tile_grid_size=(8, 8), p = 1)
     
 augmented_image = transform(image=image_np)['image']
     
@@ -434,9 +430,6 @@ show_image(augmented_image, 'Color brightness Image')
 plt.show()
 ```
 
-    C:\Users\user\AppData\Local\Temp\ipykernel_17472\1445347203.py:1: UserWarning: Argument(s) 'always_apply' are not valid for transform CLAHE
-      transform = A.CLAHE(clip_limit=2.0, tile_grid_size=(8, 8), always_apply=True)
-    
 
 
 ![png](/assets/images/2025-01-22-DL6-DataAugmentation_25_1.png)
@@ -452,7 +445,7 @@ plt.show()
 ```python
 transform = A.CoarseDropout(max_holes=20, max_height=8, max_width=8, 
                                 min_holes=2, min_height=4, min_width=4,
-                                fill_value=0, always_apply=True)
+                                fill_value=0, p = 1)
     
 augmented_image = transform(image=image_np)['image']
     
@@ -467,9 +460,6 @@ show_image(augmented_image, 'Color CoarseDropout Image')
 plt.show()
 ```
 
-    C:\Users\user\AppData\Local\Temp\ipykernel_17472\932511038.py:1: UserWarning: Argument(s) 'max_holes, max_height, max_width, min_holes, min_height, min_width, fill_value, always_apply' are not valid for transform CoarseDropout
-      transform = A.CoarseDropout(max_holes=20, max_height=8, max_width=8,
-    
 
 
 ![png](/assets/images/2025-01-22-DL6-DataAugmentation_27_1.png)
